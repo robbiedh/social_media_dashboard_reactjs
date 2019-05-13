@@ -11,6 +11,7 @@ import List_comment from './page/List_comment';
 import List_photo from './page/List_photo';
 import Detail_photo from './page/Detail_photo';
 import Edit_comment from './page/Edit_comment';
+import Edit_post from './page/Edit_post';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
@@ -34,7 +35,7 @@ const routing = (
       <Route path="/users" component={List_user} />
       <Route path="/post/:id" component={List_post} />
       <Route path="/post-all" component={ListAll_post} />
-      <Route path="/post-edit/:id" component={ListAll_post} />
+      <Route path="/post-edit/:id" component={Edit_post} />
       <Route path="/album/:id" component={List_album} />
       <Route path="/photo/:id" component={List_photo} />
       <Route path="/comment/:id" component={List_comment} />
