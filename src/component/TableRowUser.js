@@ -9,6 +9,7 @@ class TableRowUser  extends Component{
     render(){
         return(
             <tr>
+                 <td>{this.props.id} </td>
                 <td>{this.props.obj.id}</td>
                 <td>{this.props.obj.name}</td>
                 <td>{this.props.obj.username}</td>
@@ -24,8 +25,8 @@ class TableRowUser  extends Component{
                 <td>{this.props.obj.company.name}</td>
                 <td>{this.props.obj.company.catchPhares}</td>
                 <td>{this.props.obj.company.bs}</td>
-                <td> <Link to={'/post/'+this.props.obj.id} >Post </Link> </td>
-                 <td> <Link to={'/album/'+this.props.obj.id} >Album </Link> </td>
+                <td> <Link to={'/post/'+this.props.obj.id} >Lihat Post </Link> </td>
+                 <td> <Link to={'/album/'+this.props.obj.id} > Lihat Album </Link> </td>
             </tr>
             
             )

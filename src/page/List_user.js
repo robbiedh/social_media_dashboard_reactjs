@@ -27,6 +27,7 @@ class  List_user extends Component{
         <table>
           <thead>
             <tr>
+                <td>Nomer </td>
                 <td>ID</td>
                 <td> Name</td>
                 <td>Username</td>
@@ -48,7 +49,7 @@ class  List_user extends Component{
             </thead>
             <tbody>
                 {this.state.users.map((data,key)=>
-                  <TableRowUser key={key} obj={data} />
+                  <TableRowUser key={key} id={key} obj={data} />
                 )}
             </tbody>
         </table>

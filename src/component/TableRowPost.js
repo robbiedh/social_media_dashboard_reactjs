@@ -12,10 +12,11 @@ class TableRowPost extends Component{
     render(){
         return(
         <tr>
-            
+             <td>{this.props.id} </td>
             <td> {this.props.obj.id}</td>
-                <td> {this.props.obj.title}</td>
-                 <td> {this.props.obj.body}</td>
+            <td> {this.props.obj.title}</td>
+            <td> {this.props.obj.body}</td>
+            
         </tr>
         );
     }

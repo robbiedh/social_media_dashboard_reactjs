@@ -2,20 +2,20 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router';
 import Setting from '../Setting'
-import TableRowAllPost from '../component/TableRowAllPost'
+import TableRowComment from '../component/TableRowComment'
 
 
-class  ListAll_post extends Component{
+class  List_comment extends Component{
     constructor(props) {
        super(props);
         const { params } = this.props.match
-       this.state = {posts: [] };
+       this.state = {comments: [], id_post:  params.id};
       
      }
      componentDidMount(){
-         axios.get(Setting.url + '/posts')
+         axios.get(Setting.url + '/comments?userId='+this.state.id_post)
        .then(response => {
-         this.setState({ posts: response.data });
+         this.setState({ comments: response.data });
          console.log('data post : '+JSON.stringify(response.data))
        })
        .catch(function (error) {
@@ -24,22 +24,20 @@ class  ListAll_post extends Component{
      }
      render(){
          return(<div>
-                <h1> List  All Post  </h1>
+                <h1> List  Comment  </h1>
                 <table>
                     <thead>
                         <tr>
                             <td>Nomer  </td>
-                            <td>Id Post </td>
-                            <td>Username </td>
-                              <td>Email </td>
-                             <td>Judul Post </td>
-                            <td>Body Post </td>
-                            <td># </td>
+                            <td>Id  </td>
+                             <td>Name </td>
+                             <td>Email </td>
+                             <td>Body  </td>
                         </tr>
                     </thead>
                     <tbody>
-                    {this.state.posts.map((data,key)=>
-                        <TableRowAllPost key={key} id={key} obj={data}/>
+                    {this.state.comments.map((data,key)=>
+                        <TableRowComment key={key} id_post={this.state.id_post} id={key} obj={data}/>
                     )}
                     </tbody>
                 </table>
@@ -47,4 +45,4 @@ class  ListAll_post extends Component{
      }
     
 }
-export default ListAll_post;
+export default List_comment;

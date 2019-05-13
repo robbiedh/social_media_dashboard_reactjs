@@ -28,6 +28,7 @@ class  List_album extends Component{
                 <table>
                     <thead>
                         <tr>
+                            <td>Nomer  </td>
                             <td>Id Album </td>
                              <td>Judul Album </td>
                           
@@ -35,7 +36,7 @@ class  List_album extends Component{
                     </thead>
                     <tbody>
                     {this.state.albums.map((data,key)=>
-                        <TableRowAlbum key={key} obj={data}/>
+                        <TableRowAlbum key={key} id={key} obj={data}/>
                     )}
                     </tbody>
                 </table>

@@ -12,10 +12,10 @@ class TableRowAlbum extends Component{
     render(){
         return(
         <tr>
-            
+                <td> {this.props.id}</td>
                 <td> {this.props.obj.id}</td>
                 <td> {this.props.obj.title}</td>
-               
+                <td> <Link to={"/photo/"+this.props.obj.id} > Lihat Photo </Link> </td>
         </tr>
         );
     }

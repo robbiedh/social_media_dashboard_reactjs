@@ -2,20 +2,20 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router';
 import Setting from '../Setting'
-import TableRowAllPost from '../component/TableRowAllPost'
+import TableRowPhoto from '../component/TableRowPhoto'
 
 
-class  ListAll_post extends Component{
+class  List_photo extends Component{
     constructor(props) {
        super(props);
         const { params } = this.props.match
-       this.state = {posts: [] };
+       this.state = {photos: [], id_album:  params.id};
       
      }
      componentDidMount(){
-         axios.get(Setting.url + '/posts')
+         axios.get(Setting.url + '/photos?albumId='+this.state.id_album)
        .then(response => {
-         this.setState({ posts: response.data });
+         this.setState({ photos: response.data });
          console.log('data post : '+JSON.stringify(response.data))
        })
        .catch(function (error) {
@@ -24,22 +24,19 @@ class  ListAll_post extends Component{
      }
      render(){
          return(<div>
-                <h1> List  All Post  </h1>
+                <h1> List  Album User </h1>
                 <table>
                     <thead>
                         <tr>
-                            <td>Nomer  </td>
-                            <td>Id Post </td>
-                            <td>Username </td>
-                              <td>Email </td>
-                             <td>Judul Post </td>
-                            <td>Body Post </td>
-                            <td># </td>
+                            <td>Nomer </td>
+                             <td>title  </td>
+                             <td>Photo </td>
+                          
                         </tr>
                     </thead>
                     <tbody>
-                    {this.state.posts.map((data,key)=>
-                        <TableRowAllPost key={key} id={key} obj={data}/>
+                    {this.state.photos.map((data,key)=>
+                        <TableRowPhoto key={key} id={key} obj={data}/>
                     )}
                     </tbody>
                 </table>
@@ -47,4 +44,4 @@ class  ListAll_post extends Component{
      }
     
 }
-export default ListAll_post;
+export default List_photo;
