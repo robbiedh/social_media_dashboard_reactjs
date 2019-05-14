@@ -24,22 +24,31 @@ class  List_album extends Component{
      }
      render(){
          return(<div>
-                <h1> List  Album User </h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>Nomer  </td>
-                            <td>Id Album </td>
-                             <td>Judul Album </td>
-                          
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {this.state.albums.map((data,key)=>
-                        <TableRowAlbum key={key} id={key} obj={data}/>
-                    )}
-                    </tbody>
-                </table>
+                <div className="container">
+                    <div className="row">
+                        <div className="col">
+                            <h3> List  Album User </h3>
+                        </div>
+                    </div>
+                </div>
+                <div className="container">
+                    <div className="table-responsive">
+                         <table className="table">
+                             <thead>
+                                 <tr>
+                                     <td>No  </td>
+                                     <td>Name Album </td>
+                                      <td>#</td>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                             {this.state.albums.map((data,key)=>
+                                 <TableRowAlbum key={key} id={key} obj={data}/>
+                             )}
+                             </tbody>
+                         </table>
+                    </div>
+                </div>
                 </div>);
      }
     

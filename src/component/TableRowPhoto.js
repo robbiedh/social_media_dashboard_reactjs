@@ -11,13 +11,12 @@ class TableRowPhoto extends Component{
     
     render(){
         return(
-        <tr>
-                
-                 <td>{this.props.id+1} </td>
-                <td> {this.props.obj.title}</td>
-                <td><img  src={this.props.obj.thumbnailUrl} /></td>
-                  <td><Link to={"/detail-photo/"+this.props.obj.id} > Detail Photo  </Link></td>
-        </tr>
+            <div className="card" style={{width: '18rem'}}>
+                <img className="card-img-top" src={this.props.obj.thumbnailUrl} alt="Thumbail" />
+                <div className="card-body">
+                    <p className="card-text">{this.props.obj.title}</p>
+                </div>
+            </div>
         );
     }
     

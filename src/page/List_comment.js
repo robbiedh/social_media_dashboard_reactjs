@@ -24,23 +24,35 @@ class  List_comment extends Component{
      }
      render(){
          return(<div>
-                <h1> List  Comment  </h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>Nomer  </td>
-                            <td>Id  </td>
-                             <td>Name </td>
-                             <td>Email </td>
-                             <td>Body  </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {this.state.comments.map((data,key)=>
-                        <TableRowComment key={key} id_post={this.state.id_post} id={key} obj={data}/>
-                    )}
-                    </tbody>
-                </table>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col">
+                                <h3> List  Comment  </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col">
+                                <table  className="table">
+                                    <thead>
+                                        <tr>
+                                            <td>Nomer  </td>
+                                             <td>Name </td>
+                                             <td>Email </td>
+                                             <td>Body  </td>
+                                             <td>#  </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {this.state.comments.map((data,key)=>
+                                        <TableRowComment key={key} id_post={this.state.id_post} id={key} obj={data}/>
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>);
      }
     

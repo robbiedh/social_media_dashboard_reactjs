@@ -24,18 +24,29 @@ class  ListAll_post extends Component{
      }
      render(){
          return(<div>
-                <h1> List  All Post  </h1>
-                  <Link to="/add-post" > Add Post  </Link>
-                <table>
+                <div className="container">
+                    <div className="row">
+                        <div className="col">
+                        <h3> List  All Post  </h3>
+                        </div>
+                    </div>
+                </div>
+                <div className="container">
+                    <div className="row">
+                        <div className="col">
+                            <Link to="/add-post" ><button type="button" class="btn btn-info" >  Add Post  </button> </Link>
+                        </div>
+                    </div>
+                </div>
+                <div className="container">
+                    <div className="table-responsive">
+                <table className="table">
                     <thead>
                         <tr>
-                            <td>Nomer  </td>
-                            <td>Id Post </td>
-                            <td>Username </td>
-                              <td>Email </td>
-                             <td>Judul Post </td>
-                            <td>Body Post </td>
-                            <td># </td>
+                            <td>No</td>
+                            <td>Judul </td>
+                            <td>Body </td>
+                             <td>#</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,6 +55,8 @@ class  ListAll_post extends Component{
                     )}
                     </tbody>
                 </table>
+                </div>
+                </div>
                 </div>);
      }
     

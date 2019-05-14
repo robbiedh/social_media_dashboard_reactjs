@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Spinner } from 'reactstrap';
-import { Table } from 'reactstrap';
+
 import { Link } from 'react-router';
-import Setting from '../Setting'
-import  TableRowUser from '../component/TableRowUser'
+import Setting from '../Setting';
+import  TableRowUser from '../component/TableRowUser';
+import  '../style/TableStyle.css';
 class  List_user extends Component{
    constructor(props) {
        super(props);
@@ -25,35 +25,21 @@ class  List_user extends Component{
      
   render(){
     return(
-        <div>
-       
-        <Row>
-            <Col><h1> Halaman List User  </h1></Col>
-        </Row>
-          {this.state.visible ?<Row> <Col xs="auto" > <Spinner /> </Col> </Row>:   
-         <Row>
-      <Col>
-        <Table dark size={{width:'100%'}}>
-          <thead>
+        <div  className="container" >
+         <div className="row "> 
+            <div className="col-md-auto" >
+            <h3> Halaman List User  </h3>
+            </div>
+        </div>
+       <div  className="table-responsive" >
+        <table className="table" >
+          <thead className="thead-drak">
             <tr>
-                <td>Nomer </td>
-                <td>ID</td>
-                <td> Name</td>
-                <td>Username</td>
-                <td> Email</td>
-                <td> Street</td>
-                <td> suite</td>
-                <td> city</td>
-                <td> zipcode</td>
-                <td> latitude</td>
-                <td> Longitude</td>
-                <td> Phone</td>
-                <td> Website</td>
-                <td> Company Name</td>
-                <td> Company catchpharse</td>
-                <td> Company bs</td>
-                <td> Post User</td>
-                <td>Album User</td>
+                <td scope="col">No </td>
+                <td scope="col">Name</td>
+                <td scope="col">Username</td>
+                <td scope="col"> Email</td>
+                <td scope="col"> #</td>
             </tr>
             </thead>
             <tbody>
@@ -61,10 +47,8 @@ class  List_user extends Component{
                   <TableRowUser key={key} id={key} obj={data} />
                 )}
             </tbody>
-        </Table>
-       </Col>
-       </Row>
-          }
+        </table>
+        </div>
         </div>
         );  
   }

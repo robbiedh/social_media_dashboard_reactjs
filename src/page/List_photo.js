@@ -24,22 +24,20 @@ class  List_photo extends Component{
      }
      render(){
          return(<div>
-                <h1> List  Album User </h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>Nomer </td>
-                             <td>title  </td>
-                             <td>Photo </td>
-                          
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {this.state.photos.map((data,key)=>
-                        <TableRowPhoto key={key} id={key} obj={data}/>
-                    )}
-                    </tbody>
-                </table>
+                <div className="container">
+                    <div className="row">
+                        <div className="col" >
+                            <h3> List  Photo  </h3>
+                        </div>
+                    </div>
+                </div>
+                    <div className="container">
+                    <div className="row">
+                        {this.state.photos.map((data,key)=>
+                            <TableRowPhoto key={key} id={key} obj={data}/>
+                        )}
+                    </div>
+                   </div>
                 </div>);
      }
     

@@ -9,17 +9,7 @@ class TableRowAllPost extends Component{
        this.state = {user:[] };
         this.handleDelet = this.handleDelet.bind(this);
      }
-     componentDidMount(){
-        //  count self=this;
-         axios.get(Setting.url + '/users?id='+this.props.obj.userId)
-       .then(response => {
-         this.setState({ user: response.data[0] });
-        //   console.log('data post : '+JSON.stringify(response.data))
-       })
-       .catch(function (error) {
-         console.log(error);
-       })
-     }
+     
     handleDelet(){
     let uri = Setting.url + '/posts/'+this.props.obj.id;
     axios.delete(uri)
@@ -35,21 +25,15 @@ class TableRowAllPost extends Component{
    
     }
     render(){
-        
-        
         return(
         <tr>
          <td> {this.props.id+1}</td>
-        <td> {this.props.obj.id}</td>
-        <td> {this.state.user.username}</td>
-         <td> {this.state.user.email}</td>
         <td> {this.props.obj.title}</td>
         <td> {this.props.obj.body}</td>
          <td>
-         <Link to={"comment/"+this.props.obj.id} > Lihat Commentar </Link>
+         <Link to={"comment/"+this.props.obj.id} > <button type="button" class="btn btn-info">Lihat Commentar</button> </Link>
          <input type="submit" onClick={()=> this.handleDelet()}  value="Delete" className="btn btn-danger"/>
-         <Link to={"edit-post/"+this.props.obj.id} > Edit Post  </Link>
-         
+         <Link to={"edit-post/"+this.props.obj.id} > <button type="button" class="btn btn-info">  Edit Post </button>  </Link>
            </td>
         </tr>
         );

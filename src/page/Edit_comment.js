@@ -35,20 +35,41 @@ class Edit_comment extends Component{
     }
     
     render(){
-        return(
-      <div>
-       <h2> Edit  Comment</h2>
-       <p> Name  :    <input 
-       value={this.state.comment.name !='' ? this.state.comment.name : ''  } 
-       onChange={(value)=>this.setState({comment:{...this.state.comment,name:value.target.value}})} /> </p>
-        <p> Email  :   <input 
-       value={this.state.comment.email !=''? this.state.comment.email : ''   } 
-       onChange={(value)=>this.setState({comment:{...this.state.comment,email:value.target.value}})} />  </p>
-        <p> Body    :  <input 
-       value={this.state.comment.body!='' ? this.state.comment.body :''   } 
-       onChange={(value)=>this.setState({comment:{...this.state.comment,body:value.target.value}})} />  </p>
-        <input type="submit" onClick={this.handle_update.bind(this)}  />
-      </div>
+        return(<div>
+            <div className="container">
+                <div className="row">
+                    <div className="col">
+                      <h3> Edit  Comment</h3>
+                    </div>
+                </div>
+            </div>
+            <div className="container" >
+                <form>
+                  <div className="form-group">
+                     <label htmlFor="name">Name</label>
+                     <input type="text" className="form-control" id="name" placeholder="User"
+                         value={this.state.comment.name !='' ? this.state.comment.name : '' } 
+                        onChange={(value)=> this.setState({comment:{...this.state.comment,name:value.target.value}})}
+                     />
+                </div>
+                 <div className="form-group">
+                     <label htmlFor="email">Email</label>
+                     <input type="email" className="form-control" id="email" placeholder="user@gmail.com"
+                         value={this.state.comment.email !='' ? this.state.comment.email : '' } 
+                        onChange={(value)=> this.setState({comment:{...this.state.comment,email:value.target.value}})}
+                     />
+                </div>
+                 <div className="form-group">
+                     <label htmlFor="email">Body</label>
+                     <textarea type="text" className="form-control" id="body" placeholder="Comment Positif"
+                         value={this.state.comment.body !='' ? this.state.comment.body : '' } 
+                        onChange={(value)=> this.setState({comment:{...this.state.comment,body:value.target.value}})}
+                     ></textarea>
+                </div>
+                  <button type="button" onClick={this.handle_update.bind(this)} className="btn btn-success">Comment</button>
+                </form>
+            </div>
+        </div>
         );
     }
     

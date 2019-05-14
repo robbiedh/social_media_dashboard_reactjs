@@ -1,43 +1,37 @@
 import React, {Component} from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class NavCostume extends Component{
     constructor(props) {
     super(props);
-
-    this.toggleNavbar = this.toggleNavbar.bind(this);
-    this.state = {
-      collapsed: true
-    };
+    
   }
-  
-  toggleNavbar() {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
+ 
 render(){
-    return(<div>
-        <Navbar color="faded" light>
-          <NavbarBrand href="/" className="mr-auto">Social Media Dashboard</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse isOpen={!this.state.collapsed} navbar>
-            <Nav navbar>
-              <NavItem>
-                <NavLink href="/">Home</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/users">User</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/post-all">Post</NavLink>
-              </NavItem>
-              
-             
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>);
+    return(
+    <nav className="navbar navbar-dark bg-dark">
+  <a className="navbar-brand" > <span className="badge badge-secondary"> Dashboard Media Social </span> </a>
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
+  </button>
+  <div className="collapse navbar-collapse" id="navbarText">
+    <ul className="navbar-nav mr-auto">
+     <li className="nav-item active">
+        <Link className="nav-link"  to="/">Home</Link>
+      </li>
+      <li className="nav-item active">
+        <Link className="nav-link"  to="/users">Users</Link>
+      </li>
+       <li className="nav-item active">
+        <Link className="nav-link"  to="/post-all">Post</Link>
+      </li>
+      <li className="nav-item active">
+        <Link className="nav-link"  to="/add-post">Add Post</Link>
+      </li>
+    </ul>
+   
+  </div>
+</nav>);
 }
 }
 export default NavCostume;

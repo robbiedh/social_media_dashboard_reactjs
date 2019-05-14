@@ -28,13 +28,12 @@ class TableRowComment extends Component{
         return(
         <tr>
          <td> {this.props.id+1}</td>
-        <td> {this.props.obj.id}</td>
         <td> {this.props.obj.name}</td>
         <td> {this.props.obj.email}</td>
         <td> {this.props.obj.body}</td>
         <td>
             <input type="submit" onClick={()=> this.handleDelet()}  value="Delete Comment" className="btn btn-danger"/>
-            <Link to={"/edit-comment/"+this.props.obj.id} > Edit Comment  </Link>
+            <Link to={"/edit-comment/"+this.props.obj.id} > <button type="button" class="btn btn-info">  Edit Comment </button>  </Link>
         </td>
        
         </tr>
