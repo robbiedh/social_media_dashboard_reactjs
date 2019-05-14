@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import Setting from '../Setting'
 import TableRowAllPost from '../component/TableRowAllPost'
 
@@ -25,6 +25,7 @@ class  ListAll_post extends Component{
      render(){
          return(<div>
                 <h1> List  All Post  </h1>
+                  <Link to="/add-post" > Add Post  </Link>
                 <table>
                     <thead>
                         <tr>

@@ -39,7 +39,7 @@ class TableRowAllPost extends Component{
         
         return(
         <tr>
-         <td> {this.props.id}</td>
+         <td> {this.props.id+1}</td>
         <td> {this.props.obj.id}</td>
         <td> {this.state.user.username}</td>
          <td> {this.state.user.email}</td>

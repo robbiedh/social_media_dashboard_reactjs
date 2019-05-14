@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Button, Table ,Row, Col} from 'reactstrap';
 import Setting from '../Setting'
 import TableRowPost from '../component/TableRowPost';
 
@@ -25,10 +26,19 @@ class  List_post extends Component{
      }
      render(){
          return(<div>
-                <h1> List  Post User </h1>
-                <Link to="/add-post" > Add Post  </Link>
-                <table>
-                    <thead>
+                <Row>
+                <Col>
+                    <h1> List  Post User </h1>
+                </Col>
+                </Row>
+                <Row>
+                <Col>
+                <Link to="/add-post" ><Button color="success">Add Post </Button>  </Link>
+                </Col>
+                </Row>
+                <Row> 
+                <Table dark>
+                    <thead >
                         <tr>
                          <td>Nomer </td>
                             <td>Id Post </td>
@@ -42,7 +52,8 @@ class  List_post extends Component{
                         <TableRowPost key={key} id={key} obj={data}/>
                     )}
                     </tbody>
-                </table>
+                </Table>
+                </Row>
                 </div>);
      }
     

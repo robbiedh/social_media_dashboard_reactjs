@@ -20,6 +20,7 @@ class Edit_comment extends Component{
        })
      }
     handle_update(){
+         console.log(this.state.comment);
         axios.put(Setting.url + '/comments/'+this.state.id_comment,this.state.comment)
        .then(response => {
       
@@ -39,13 +40,13 @@ class Edit_comment extends Component{
        <h2> Edit  Comment</h2>
        <p> Name  :    <input 
        value={this.state.comment.name !='' ? this.state.comment.name : ''  } 
-       onChange={(value)=>this.setState({comment:{...this.state.comment,name:value.value}})} /> </p>
+       onChange={(value)=>this.setState({comment:{...this.state.comment,name:value.target.value}})} /> </p>
         <p> Email  :   <input 
        value={this.state.comment.email !=''? this.state.comment.email : ''   } 
-       onChange={(value)=>this.setState({comment:{...this.state.comment,email:value.value}})} />  </p>
+       onChange={(value)=>this.setState({comment:{...this.state.comment,email:value.target.value}})} />  </p>
         <p> Body    :  <input 
        value={this.state.comment.body!='' ? this.state.comment.body :''   } 
-       onChange={(value)=>this.setState({comment:{...this.state.comment,body:value.value}})} />  </p>
+       onChange={(value)=>this.setState({comment:{...this.state.comment,body:value.target.value}})} />  </p>
         <input type="submit" onClick={this.handle_update.bind(this)}  />
       </div>
         );

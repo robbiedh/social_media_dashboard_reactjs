@@ -1,18 +1,21 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Container, Row, Col, Spinner } from 'reactstrap';
+import { Table } from 'reactstrap';
 import { Link } from 'react-router';
 import Setting from '../Setting'
 import  TableRowUser from '../component/TableRowUser'
 class  List_user extends Component{
    constructor(props) {
        super(props);
-       this.state = {users: [] };
+       this.state = {users: [] ,visible:false};
         
      }
      componentDidMount(){
+          this.setState({  visible:true});
        axios.get(Setting.url + '/users')
        .then(response => {
-         this.setState({ users: response.data });
+         this.setState({ users: response.data , visible:false});
          console.log('data produk : '+JSON.stringify(response.data))
        })
        .catch(function (error) {
@@ -23,8 +26,14 @@ class  List_user extends Component{
   render(){
     return(
         <div>
-        <h1> Halaman List User  </h1>
-        <table>
+       
+        <Row>
+            <Col><h1> Halaman List User  </h1></Col>
+        </Row>
+          {this.state.visible ?<Row> <Col xs="auto" > <Spinner /> </Col> </Row>:   
+         <Row>
+      <Col>
+        <Table dark size={{width:'100%'}}>
           <thead>
             <tr>
                 <td>Nomer </td>
@@ -52,8 +61,10 @@ class  List_user extends Component{
                   <TableRowUser key={key} id={key} obj={data} />
                 )}
             </tbody>
-        </table>
-       
+        </Table>
+       </Col>
+       </Row>
+          }
         </div>
         );  
   }

@@ -13,7 +13,7 @@ class TableRowPhoto extends Component{
         return(
         <tr>
                 
-                 <td>{this.props.id} </td>
+                 <td>{this.props.id+1} </td>
                 <td> {this.props.obj.title}</td>
                 <td><img  src={this.props.obj.thumbnailUrl} /></td>
                   <td><Link to={"/detail-photo/"+this.props.obj.id} > Detail Photo  </Link></td>
