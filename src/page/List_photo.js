@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Link } from 'react-router';
 import Setting from '../Setting'
 import TableRowPhoto from '../component/TableRowPhoto'
 
@@ -33,9 +32,11 @@ class  List_photo extends Component{
                 </div>
                     <div className="container">
                     <div className="row">
-                        {this.state.photos.map((data,key)=>
-                            <TableRowPhoto key={key} id={key} obj={data}/>
-                        )}
+                        
+                            {this.state.photos.map((data,key)=>
+                                <TableRowPhoto key={key} id={key} obj={data}/>
+                            )}
+                       
                     </div>
                    </div>
                 </div>);

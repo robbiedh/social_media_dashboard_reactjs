@@ -1,16 +1,11 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class NavCostume extends Component{
-    constructor(props) {
-    super(props);
-    
-  }
- 
 render(){
     return(
     <nav className="navbar navbar-dark bg-dark">
-  <a className="navbar-brand" > <span className="badge badge-secondary"> Dashboard Media Social </span> </a>
+    <Link to="/"  className="navbar-brand" > <span className="badge badge-secondary"> Dashboard Media Social </span> </Link>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>

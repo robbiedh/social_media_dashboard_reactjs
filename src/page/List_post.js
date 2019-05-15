@@ -42,9 +42,9 @@ class  List_post extends Component{
                 <table   className="table">
                     <thead >
                         <tr>
-                            <td scope="col">No</td>
-                            <td scope="col">Judul Post </td>
-                            <td scope="col"> Body Post </td>
+                            <td>No</td>
+                            <td>Judul Post </td>
+                            <td> Body Post </td>
                           
                         </tr>
                     </thead>

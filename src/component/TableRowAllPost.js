@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter, Link, Route } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 import axios from 'axios';
 import Setting from '../Setting'
 import  History from './History'
@@ -31,9 +31,10 @@ class TableRowAllPost extends Component{
         <td> {this.props.obj.title}</td>
         <td> {this.props.obj.body}</td>
          <td>
-         <Link to={"comment/"+this.props.obj.id} > <button type="button" class="btn btn-info">Lihat Commentar</button> </Link>
-         <input type="submit" onClick={()=> this.handleDelet()}  value="Delete" className="btn btn-danger"/>
-         <Link to={"edit-post/"+this.props.obj.id} > <button type="button" class="btn btn-info">  Edit Post </button>  </Link>
+         <Link to={"comment/"+this.props.obj.id} > <button type="button" className="btn btn-info btn-sm">Lihat Commentar</button> </Link>
+         <input type="submit" onClick={()=> this.handleDelet()}  value="Delete" className="btn btn-danger btn-sm"/>
+         <Link to={"edit-post/"+this.props.obj.id} > <button type="button" className="btn btn-info btn-sm">  Edit Post </button>  </Link>
+         <Link to={"/add-comment/"+this.props.obj.id} > <button type="button" className="btn btn-info btn-sm">  Comment </button>  </Link>
            </td>
         </tr>
         );

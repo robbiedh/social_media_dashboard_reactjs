@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+
 import axios from 'axios';
 import Setting from '../Setting'
 class Detail_photo extends Component{
@@ -23,7 +23,7 @@ class Detail_photo extends Component{
            axios.get(Setting.url + '/albums?id='+this.state.photo.albumId)
        .then(response => {
          this.setState({ album: response.data[0] });
-          console.log('data post : '+JSON.stringify(response.data))
+         
        })
        .catch(function (error) {
          console.log(error);
@@ -33,13 +33,33 @@ class Detail_photo extends Component{
     render(){
         return(
       <div>
-       
-       <p> Titile Photo :  {this.state.photo.title}  </p>
-        <p> Titile Album  :  {this.state.album.title}  </p>
-        <p> Original Link   : <a href={this.state.photo.url} > {this.state.photo.url} </a>  </p>
-        <img src={this.state.photo.thumbnailUrl} />
-        
-      </div>
+        <div className="container">
+            <div className="row">
+                <div className="col">
+                <h3> Detail Photo</h3>
+                </div>
+            </div>
+        </div>
+        <div className="container">
+            <div className="row">
+                <div className="col col-lg-2">
+                        <img className="card-img-top" style={{width: '10rem'}} src={this.state.photo.thumbnailUrl} alt="Thumbnail" />
+                </div>
+                <div className="col col-lg-2">
+                           
+                            <p className="card-text"> Titile Photo : </p>
+                            <p className="card-text">  <p> Titile Album  :   </p></p>
+                            <p className="card-text">  <p> Titile Album  :    </p></p>
+                </div>
+                <div className="col-md-auto">
+                    <p>{this.state.photo.title} </p>
+                    <p> {this.state.album.title} </p>
+                    <p>  <a href={this.state.photo.url} > {this.state.photo.url} </a> </p>
+                </div>
+                
+            </div>
+        </div>
+       </div>
         );
     }
     

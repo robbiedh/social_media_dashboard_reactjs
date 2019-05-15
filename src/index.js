@@ -24,7 +24,7 @@ import Detail_user from './page/Detail_user';
 
 
 
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 

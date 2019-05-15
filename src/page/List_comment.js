@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Link } from 'react-router';
 import Setting from '../Setting'
 import TableRowComment from '../component/TableRowComment'
 
@@ -16,7 +15,7 @@ class  List_comment extends Component{
          axios.get(Setting.url + '/comments?userId='+this.state.id_post)
        .then(response => {
          this.setState({ comments: response.data });
-         console.log('data post : '+JSON.stringify(response.data))
+      
        })
        .catch(function (error) {
          console.log(error);

@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-
-import { Link } from 'react-router';
 import Setting from '../Setting';
 import  TableRowUser from '../component/TableRowUser';
 import  '../style/TableStyle.css';
@@ -16,7 +14,7 @@ class  List_user extends Component{
        axios.get(Setting.url + '/users')
        .then(response => {
          this.setState({ users: response.data , visible:false});
-         console.log('data produk : '+JSON.stringify(response.data))
+       
        })
        .catch(function (error) {
          console.log(error);
@@ -35,11 +33,11 @@ class  List_user extends Component{
         <table className="table" >
           <thead className="thead-drak">
             <tr>
-                <td scope="col">No </td>
-                <td scope="col">Name</td>
-                <td scope="col">Username</td>
-                <td scope="col"> Email</td>
-                <td scope="col"> #</td>
+                <th scope="col">No </th>
+                <th scope="col">Name</th>
+                <th scope="col">Username</th>
+                <th scope="col"> Email</th>
+                <th scope="col"> #</th>
             </tr>
             </thead>
             <tbody>

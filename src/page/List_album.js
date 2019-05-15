@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Link } from 'react-router';
 import Setting from '../Setting'
 import TableRowAlbum from '../component/TableRowAlbum'
 
@@ -16,7 +15,7 @@ class  List_album extends Component{
          axios.get(Setting.url + '/albums?userId='+this.state.id_user)
        .then(response => {
          this.setState({ albums: response.data });
-         console.log('data post : '+JSON.stringify(response.data))
+      
        })
        .catch(function (error) {
          console.log(error);

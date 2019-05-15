@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Link } from 'react-router';
 import Setting from '../Setting'
-import  TableRowUser from '../component/TableRowUser'
+import MapCostume from '../component/MapCostume'
+
+
 class  Detail_user extends Component{
    constructor(props) {
        super(props);
@@ -21,6 +22,9 @@ class  Detail_user extends Component{
          console.log(error);
        })
      }
+    
+     
+     
      
   render(){
     return(
@@ -80,12 +84,25 @@ class  Detail_user extends Component{
                     <h5>  Address Info </h5>
                 </div>
             </div>
+              <div className="row">
+                <div className="col">
+                 <MapCostume 
+                 lat={Object.keys(this.state.user).length !== 0?parseFloat(this.state.user.address.geo.lat):59.95}
+                 long={Object.keys(this.state.user).length !== 0?parseFloat(this.state.user.address.geo.lng):30.33}
+                 center={{
+                   lat:Object.keys(this.state.user).length !== 0?  parseFloat(this.state.user.address.geo.lat):59.95,
+                   lng:Object.keys(this.state.user).length !== 0?  parseFloat(this.state.user.address.geo.lng):30.33
+                 }}
+                 />
+
+                </div>
+            </div>
             <div className="row">
                 <div className="col col-lg-2">
                 Street
                 </div>
                  <div className="col-md-auto">
-                    {this.state.user!=''?this.state.user.address.street:''}
+                    {Object.keys(this.state.user).length !== 0?this.state.user.address.street:''}
                  </div>
             </div>
              <div className="row">
@@ -93,7 +110,7 @@ class  Detail_user extends Component{
                 Suite
                 </div>
                  <div className="col-md-auto">
-                    {this.state.user!=''?this.state.user.address.suite:''}
+                    {Object.keys(this.state.user).length !== 0?this.state.user.address.suite:''}
                  </div>
             </div>
             <div className="row">
@@ -101,7 +118,7 @@ class  Detail_user extends Component{
                 City
                 </div>
                  <div className="col-md-auto">
-                  {this.state.user!=''?this.state.user.address.city:''}
+                  {Object.keys(this.state.user).length !== 0?this.state.user.address.city:''}
                  </div>
             </div>
              <div className="row">
@@ -109,7 +126,7 @@ class  Detail_user extends Component{
                 Zipcode
                 </div>
                  <div className="col-md-auto">
-                 {this.state.user!=''?this.state.user.address.zipcode:''}
+                 {Object.keys(this.state.user).length !== 0?this.state.user.address.zipcode:''}
                  </div>
             </div>
              <div className="row">
@@ -117,7 +134,7 @@ class  Detail_user extends Component{
                 Latitude
                 </div>
                  <div className="col-md-auto">
-                  {this.state.user!=''?this.state.user.address.geo.lat:''}
+                  {Object.keys(this.state.user).length !== 0?this.state.user.address.geo.lat:''}
                  </div>
             </div>
             <div className="row">
@@ -125,7 +142,7 @@ class  Detail_user extends Component{
                 Longitude
                 </div>
                  <div className="col-md-auto">
-                  {this.state.user!=''?this.state.user.address.geo.long:''}
+                  {Object.keys(this.state.user).length !== 0?this.state.user.address.geo.lng:''}
                  </div>
             </div>
              <div className="row">
@@ -138,7 +155,7 @@ class  Detail_user extends Component{
                 Name
                 </div>
                  <div className="col-md-auto">
-                  {this.state.user!=''?this.state.user.company.name:''}
+                  {Object.keys(this.state.user).length !== 0?this.state.user.company.name:''}
                  </div>
             </div>
             <div className="row">
@@ -146,7 +163,7 @@ class  Detail_user extends Component{
                 catchPhrase
                 </div>
                  <div className="col-md-auto">
-                  {this.state.user!=''?this.state.user.company.catchPhrase:''}
+                  {Object.keys(this.state.user).length !== 0?this.state.user.company.catchPhrase:''}
                  </div>
             </div>
             <div className="row">
@@ -154,7 +171,7 @@ class  Detail_user extends Component{
                 bs
                 </div>
                  <div className="col-md-auto">
-                  {this.state.user!=''?this.state.user.company.bs:''}
+                  {Object.keys(this.state.user).length !== 0?this.state.user.company.bs:''}
                  </div>
             </div>
         </div>

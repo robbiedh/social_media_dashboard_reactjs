@@ -3,4 +3,4 @@ class Setting {
     this.url = 'https://jsonplaceholder.typicode.com';
   }
 }
-export default (new Setting);
+export default (new Setting());

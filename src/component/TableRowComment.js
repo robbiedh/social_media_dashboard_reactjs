@@ -33,7 +33,7 @@ class TableRowComment extends Component{
         <td> {this.props.obj.body}</td>
         <td>
             <input type="submit" onClick={()=> this.handleDelet()}  value="Delete Comment" className="btn btn-danger"/>
-            <Link to={"/edit-comment/"+this.props.obj.id} > <button type="button" class="btn btn-info">  Edit Comment </button>  </Link>
+            <Link to={"/edit-comment/"+this.props.obj.id} > <button type="button" className="btn btn-info">  Edit Comment </button>  </Link>
         </td>
        
         </tr>

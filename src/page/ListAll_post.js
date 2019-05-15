@@ -8,15 +8,13 @@ import TableRowAllPost from '../component/TableRowAllPost'
 class  ListAll_post extends Component{
     constructor(props) {
        super(props);
-        const { params } = this.props.match
        this.state = {posts: [] };
-      
      }
      componentDidMount(){
          axios.get(Setting.url + '/posts')
        .then(response => {
          this.setState({ posts: response.data });
-         console.log('data post : '+JSON.stringify(response.data))
+       
        })
        .catch(function (error) {
          console.log(error);
@@ -34,7 +32,7 @@ class  ListAll_post extends Component{
                 <div className="container">
                     <div className="row">
                         <div className="col">
-                            <Link to="/add-post" ><button type="button" class="btn btn-info" >  Add Post  </button> </Link>
+                            <Link to="/add-post" ><button type="button" className="btn btn-info btn-sm" >  Add Post  </button> </Link>
                         </div>
                     </div>
                 </div>
